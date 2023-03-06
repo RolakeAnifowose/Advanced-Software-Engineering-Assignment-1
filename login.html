@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <head>
-    <style>
-        body {background-color: #062763;}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <form style="background-color: #fff;">
+<body id="body12">
+    <form>
         <div>
-            <h2>Login to your account</h2>
+            <p id ="mainformtext" class="mb-6 sm:mb-8 flex flex-col items-center">Login to your account</p>
         </div>
         <div class="form-group">
-            <label for="fname">Email</label><br>
-            <span><input type="text" name="email"></span>
+            <div id="emaildiv">
+                <label for="fname">Email</label><br>
+                <span><input type="text" name="email"></span>
+            </div>
+            <div id="passworddiv">
+                <label for="fname">Password</label><br>
+                <span><input name="password"></span>
+            </div>    
+            <div id="logindiv">
+                <span><input value="LOG IN" id="login" class="submit"></span>
+            </div>       
         </div>
-        <div class="form-group">
-            <label for="fname">Password</label><br>
-            <span><input name="password"></span>
-        </div>
-        <input type="submit" value="LOG IN" style="background-color: 083E9E; color: #fff;">
     </form>
 </body>
 
 </html>
+
