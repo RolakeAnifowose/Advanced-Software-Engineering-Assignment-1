@@ -1,0 +1,157 @@
+body {
+    font-family: 'Inter';
+    margin: 0;
+}
+
+#body12 {
+    background-color: #062763;
+}
+
+form {
+    /* width: 28%;
+    height: auto;
+    background: #FFFFFF;
+    border-radius: 25px;
+    top: 80%;
+    left: 35%; */
+    /* margin: 0 auto; */
+
+    left      : 55%;
+    top       : 40%;
+    width: 23%;
+    /* height: 375px; */
+    position  : absolute;
+    transform : translate(-50%, -50%);     
+    background: #FFFFFF;
+    border-radius: 20px;
+    align-items: center;
+}
+
+#login, #register {
+    background-color: 083E9E;
+    color: #ffffff;
+}
+
+#mainformtext {
+    /* position: absolute; */
+    /* width: 213px; */
+    height: 24px;
+    padding-top: 10%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    margin: auto;
+    color: #083E9E;
+}
+
+label {
+    position: absolute;
+    /* width: 35px; */
+    height: 17px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #7E8491;
+}
+
+input {
+    /* position: absolute; */
+    /* width: 295px; */
+    width: 95%;
+    height: 43px;
+    background: #EDF2F7;
+    /* border-color: #EDF2F7; */
+    border-color: transparent;
+    border-radius: 7px;
+    padding-left: .6rem;
+    /* transform: matrix(1, 0, 0, -1, 0, 0); */
+}
+
+#passworddiv {
+    padding-top: 10%;
+}
+
+#logindiv {
+    padding-top: 10%;
+}
+
+.submit {
+    /* position: absolute; */
+    width: 100%;
+    height: 43px;
+    /* width: 95%; */
+    text-align: center;
+    background: #083E9E;
+    border-color: transparent;
+    border-radius: 7px;
+    color: #ffffff;
+    /* transform: matrix(1, 0, 0, -1, 0, 0); */
+}
+
+.form-group {
+    /* position  : absolute; */
+    /* width: 295px; */
+    width: 90%;
+    margin: auto;
+    padding-top: 7%;
+    align-items: center;
+}
+
+#registrationform {
+    height: auto;
+}
+
+a, h4 {
+    font-family: 'Inter';
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+
+
+#sidebar {
+    height: 100%;
+    width: 16rem;
+    background-color: #062863;
+    color: #FFFFFF;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding-top: 1rem;
+}
+
+#sidebar a {
+    color: #FFFFFF;
+    display: block;
+    font-size: 1rem;
+    padding: 12px 0px 6px 0px;
+}
+
+#sidebar a:hover {
+    color: #f1f1f1;
+}
+
+i {
+    margin-right: 1rem;
+    display: inline-block;
+
+    /* margin-left: 1rem; */
+    /* padding-left: 1rem; */
+}
+
+#sidebar span {
+    margin-left: 2rem;
+}
+
+#mainpages {
+    display: flex;
+}
