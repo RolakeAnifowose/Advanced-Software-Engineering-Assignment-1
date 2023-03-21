@@ -45,9 +45,9 @@ def register():
             email[email] = password
             print('User created')
             print(email)
-            return render_template('dashboard.html')
+            return render_template('register.html')
     else:
-        return render_template('dashboard.html')
+        return render_template('register.html')
 
 @app.route('/deposit', methods = ['GET', 'POST'])
 def deposit():
