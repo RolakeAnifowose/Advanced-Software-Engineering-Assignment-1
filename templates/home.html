@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="homepage.css">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='homepage.css') }}" />
     <title>Landing Page</title>
 </head>
 
@@ -15,18 +15,18 @@
             <p><a href="#" class="functionsbuttons">Transfer</a></p>
         </div>
         <div id="buttonsattheright">
-            <button type="button" id="signin"><a href="login.html">Sign In</a></button>
-            <button type="button" id="createaccount"><a href="register.html">Create free account</a></button>
+            <button type="button" id="signin"><a href="login">Sign In</a></button>
+            <button type="button" id="createaccount"><a href="register">Create free account</a></button>
         </div>
     </div>
     <div id="content">
         <div>
             <h1>The Bank of the People</h1>
             <h3>Save, spend, send and invest money across borders</h3>
-            <button type="button" id="joinwebank"><a href="register.html">Join WeBank</a></button>
+            <button type="button" id="joinwebank"><a href="register">Join WeBank</a></button>
         </div>
         <div id="imagediv">
-            <img src="image2.png" alt="Description for image" width="250" height="250">
+            <img src="{{url_for('static', filename='image2.png') }}" alt="Description for image" width="250" height="250">
         </div>
     </div>
 </body>
