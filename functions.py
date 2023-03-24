@@ -13,7 +13,7 @@ class Customer():
         y = 'Name: ' + self.name
         z = 'Account balance is now £' + str(self.balance) 
         result = [x,y,z]
-        #return f"Hi, {self.name}, thanks for banking with us.Your newly assigned account number is {accountNumber}" 
+        return f"Hi, {self.name}, thanks for banking with us.Your newly assigned account number is {accountNumber}" 
         
 
 
