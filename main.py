@@ -1,95 +1,96 @@
+# Banking Website
 from flask import Flask, render_template, request, session, url_for, redirect
+
+from flask.globals import request
 
 from functions import Bank
 
 app = Flask(__name__)
 users = {}
 print(users)
-app.secret_key = 'hkjkjhfjoojoff1357216%$^"£"'
+app.secret_key = 'hkjkjhft7yqr7526%$^"£"'
+global user
 
 @app.route('/')
 def home():
+  if 'user' in session:
+    money = user.showDetails()
+    return render_template('home.html', money=money)
+  else:
     return render_template('home.html')
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
-    global user
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
+  
+  if request.method == 'POST':
+    username = request.form['username']
+    password = request.form['password']
 
-        if email in email and email[email] == password:
-            session['email'] = email
+    if username in users and users[username] == password:
+      session['user'] = username
 
-            email = Bank(session['email'])
+      user = Bank(session['user'])
 
-            print(email.showDetails())
+      print(user.showDetails())
 
-            print('Login successful')
-            return render_template('dashboard')
-        else:
-            print('Username does not exist or wrong password')
-            return render_template('login.html')
-    return render_template('login.html')
+      print('Login Successful')
+      return render_template('dashboard.html')
+    else:
+      print('Email dosent exist or wrong password')
+      return render_template('login.html')
+      
 
-@app.route('/register', methods = ['GET', 'POST'])
+  return render_template('login.html')
+
+@app.route('/register', methods= ['GET', 'POST'])
 def register():
-    if request.method == 'POST':
-        email = request.form.get('email')
-        firstname = request.form.get('firstname')
-        lastname = request.form.get('lastname')
-        phone = request.form.get('phone')
-        password = request.form.get('password')
+  if request.method == 'POST':
+    username = request.form['username']
+    if username in users:
+      print('User already exists')
+      return render_template('register.html')
+    else:
+      password = request.form['password']
+      users[username] = password
+      print('user created')
+      print(users)
+      return render_template('dashboard.html')
+  else:
+    return render_template('register.html')
 
-        if len(email) < 4:
-
-
-    # if request.method == 'POST':
-    #     email = request.form['email']
-    #     if email in email:
-    #         print('Email already exists')
-    #         #include flash message
-    #         return render_template('login.html')
-    #     else:
-    #         password = request.form['password']
-    #         email[email] = password
-    #         print('User created')
-    #         print(email)
-    #         return render_template('register.html')
-    # else:
-    #     return render_template('register.html')
 
 @app.route('/deposit', methods = ['GET', 'POST'])
 def deposit():
-    if request.method == 'POST':
-        amount = request.form['deposit']
-        user.deposit(amount)
-        print(user.showDetails())
-        return render_template('deposit.html')
-    else:
-        return render_template('deposit.html')
-
+  if request.method == 'POST':
+    amount = request.form['deposit']
+    user.deposit(amount)
+    print(user.showDetails())
+    return render_template('deposit.html')
+  else:
+    return render_template('deposit.html')
 
 @app.route('/withdraw', methods = ['GET', 'POST'])
 def withdraw():
-    if request.method == 'POST':
-        amount = request.form['withdraw']
-        user.withdraw(amount)
-        print(user.showDetails())
-        return render_template('withdraw.html')
-    else:
-        return render_template('withdraw.html')
+  if request.method == 'POST':
+    amount = request.form['withdraw']
+    user.withdraw(amount)
+    print(user.showDetails())
+    return render_template('withdraw.html')
+  else:
+    return render_template('withdraw.html')
 
-@app.route('/transfer', methods = ['GET', 'POST'])
-def transfer():
-    if request.method == 'POST':
-        amount = request.form['transfer']
-        user.transfer(amount)
-        print(user.showDetails())
-        return render_template('transfer.html')
-    else:
-        return render_template('transfer.html')
+@app.route('/logout')
+def logout():
+  session.pop('user', None)
+  return redirect(url_for('home'))
+  
 
 
 if __name__ == "__main__":
-    app.run(debug = True)
+  app.run(debug=True)
+
+
+
+
+
+

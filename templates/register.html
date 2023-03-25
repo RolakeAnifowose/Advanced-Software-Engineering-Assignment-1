@@ -5,7 +5,7 @@
 </head>
 
 <body id="body12">
-    <form id="registrationform" action = '/register'>
+    <form id="registrationform" action = '/register' method="post">
         <div>
             <h2 id ="mainformtext">Create a Secure Account</h2>
         </div>
@@ -19,11 +19,11 @@
         </div>
         <div class="form-group">
             <label for="email">Email</label><br>
-            <span><input type="text" name="email"></span>
+            <span><input type="text" name="username"></span>
         </div>
         <div class="form-group">
             <label for="phone">Phone Number</label><br>
-            <span><input type="phonenumber" name="phone"></span>
+            <span><input type="tel" name="phone"></span>
         </div>
         <div class="form-group">
             <label for="fname">Password</label><br>
@@ -32,7 +32,7 @@
         <div class="form-group">
             <input type="submit" class="submit" name="registerbutton" value="CREATE ACCOUNT">
         </div>
-        <h4><a href="login.html">Already have an account? Login</a></h4>
+        <h4><a href="login">Already have an account? Login</a></h4>
     </form>
 </body>
 
