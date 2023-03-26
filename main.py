@@ -35,19 +35,29 @@ def login():
 @app.route('/register', methods = ['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        email = request.form['email']
-        if email in email:
-            print('Email already exists')
-            #include flash message
-            return render_template('login.html')
-        else:
-            password = request.form['password']
-            email[email] = password
-            print('User created')
-            print(email)
-            return render_template('register.html')
-    else:
-        return render_template('register.html')
+        email = request.form.get('email')
+        firstname = request.form.get('firstname')
+        lastname = request.form.get('lastname')
+        phone = request.form.get('phone')
+        password = request.form.get('password')
+
+        if len(email) < 4:
+
+
+    # if request.method == 'POST':
+    #     email = request.form['email']
+    #     if email in email:
+    #         print('Email already exists')
+    #         #include flash message
+    #         return render_template('login.html')
+    #     else:
+    #         password = request.form['password']
+    #         email[email] = password
+    #         print('User created')
+    #         print(email)
+    #         return render_template('register.html')
+    # else:
+    #     return render_template('register.html')
 
 @app.route('/deposit', methods = ['GET', 'POST'])
 def deposit():
