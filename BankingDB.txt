@@ -1,0 +1,27 @@
+Create Database BankingDB;
+
+
+Create table CustomerDetails
+(firstname varchar(50),
+lastname varchar(50),
+password varchar(250),
+phone varchar(50),
+email varchar(50));
+
+
+Create table AccountDetails
+(accountNo int,
+accountDate date,
+email varchar(50),
+appstatus varchar(10));
+
+insert into AccountDetails(accountNo) values(10000001);
+
+Create table TransactionDetails
+(transactionNo int,
+transactionDate date,
+accountnumber int,
+amounttotransfer int,
+reasonfortransfer varchar(100));
+
+insert into TransactionDetails(transactionNo) values(1001);

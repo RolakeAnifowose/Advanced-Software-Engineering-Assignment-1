@@ -1,7 +1,7 @@
 #parent class
 import random 
 
-class Customer():
+class User():
     def __init__(self, name):
         self.name = name
         
@@ -12,14 +12,13 @@ class Customer():
         x = 'Personal details'
         y = 'Name: ' + self.name
         z = 'Account balance is now £' + str(self.balance) 
-        result = [x,y,z]
-        return f"Hi, {self.name}, thanks for banking with us.Your newly assigned account number is {accountNumber}" 
+        a = 'Account Number is ' + str(accountNumber)
+        result = [x,y,z,a]
+        return result
         
 
-
-
 #child class
-class Bank(Customer):
+class Bank(User):
     def __init__(self, name):
         super().__init__(name)
         self.balance = 0
@@ -35,7 +34,7 @@ class Bank(Customer):
             return 'Insufficient funds £' + str(self.balance)
         else:
             self.balance = self.balance - self.amount
-            return 'Account balance is now £' + str(self.amount)
+            return 'Account balance is now £' + str(self.balance)
     
     def transfer(self, amount):
         self.amount = int(amount)
@@ -43,11 +42,14 @@ class Bank(Customer):
             return 'Insufficient funds £' + str(self.balance)
         else:
             self.balance = self.balance - self.amount
-            return 'Account balance is now £' + str(self.amount)
+            return 'Account balance is now £' + str(self.balance)
 
     def viewBalance(self):
-        return self.showDetails()
+        return str(self.balance)
 
-
-    
-
+# Ola = Bank('Ola')
+# print(Ola.showDetails())
+# print(Ola.deposit(1000))
+# print(Ola.showDetails()) 
+# print(Ola.withdraw(200))   
+# print(Ola.showDetails())
