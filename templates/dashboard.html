@@ -6,34 +6,36 @@
 </head>
 
 <body>
-    <div id="sidebar">
-        <a href="/"><span>WeBank</span></a>
-        <a href="dashboard"><i class="fa-solid fa-house fa-fw"></i><span>Account Details</span></a>
-        <a href="deposit"><i class="fa-solid fa-wallet fa-fw"></i><span>Deposit</span></a>
-        <a href="withdraw"><i class="fa-solid fa-money-bill fa-fw"></i><span>Withdraw</span></a>
-        <a href="transfer"><i class="fa-solid fa-money-bill-transfer fa-fw"></i><span>Transfer</span></a>
-    </div>
-
-    <div id="content">
-        <div class="form-group">
-            <label for="firstname">First Name</label><br>
-            <span><input type="text" name="firstname" value="{{session['user']}}"></span>
+    <div id="mainpages">
+        <div id="sidebar">
+            <a href="/"><span>WeBank</span></a>
+            <a href="dashboard"><i class="fa-solid fa-house fa-fw"></i><span>Account Details</span></a>
+            <a href="deposit"><i class="fa-solid fa-wallet fa-fw"></i><span>Deposit</span></a>
+            <a href="withdraw"><i class="fa-solid fa-money-bill fa-fw"></i><span>Withdraw</span></a>
+            <a href="transfer"><i class="fa-solid fa-money-bill-transfer fa-fw"></i><span>Transfer</span></a>
         </div>
-        <div class="form-group">
-            <label for="lastname">Last Name</label><br>
-            <span><input type="text" name="lastname"></span>
-        </div>
-        <div class="form-group">
-            <label for="email">Email Address</label><br>
-            <span><input type="text" name="email"></span>
-        </div>
-        <div class="form-group">
-            <label for="accountnumber">Account Number</label><br>
-            <span><input type="number" name="accountnumber"></span>
-        </div>
-        <div class="form-group">
-            <label for="accountbalance">Account Balance</label><br>
-            <span><input type="number" name="accountbalance" value="{{money]}}"></span>
+    
+        <div id="content">
+            <div class="form-group">
+                <label for="firstname">First Name</label><br>
+                <span><input type="text" name="firstname" value="{{session['user']}}"></span>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label><br>
+                <span><input type="text" name="lastname"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label><br>
+                <span><input type="text" name="email"></span>
+            </div>
+            <div class="form-group">
+                <label for="accountnumber">Account Number</label><br>
+                <span><input type="number" name="accountnumber"></span>
+            </div>
+            <div class="form-group">
+                <label for="accountbalance">Account Balance</label><br>
+                <span><input type="number" name="accountbalance" value="{{money]}}"></span>
+            </div>
         </div>
     </div>
 </body>
