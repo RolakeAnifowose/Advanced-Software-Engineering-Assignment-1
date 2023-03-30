@@ -1,6 +1,8 @@
-#parent class
+
 import random 
 
+# class User definition
+# parent class
 class User():
     def __init__(self, name):
         self.name = name
@@ -17,17 +19,19 @@ class User():
         return result
         
 
-#child class
+# child class Bank definition
 class Bank(User):
     def __init__(self, name):
         super().__init__(name)
         self.balance = 0
     
+    # defining the deposit method
     def deposit(self, amount):
         self.amount = int(amount)
         self.balance = self.amount + self.balance
         return 'Account balance is now £' + str(self.balance)
     
+    # defining the withdraw method
     def withdraw(self, amount):
         self.amount = int(amount)
         if self.amount > self.balance:
@@ -36,6 +40,7 @@ class Bank(User):
             self.balance = self.balance - self.amount
             return 'Account balance is now £' + str(self.balance)
     
+    # defining the transfer method
     def transfer(self, amount):
         self.amount = int(amount)
         if self.amount > self.balance:
@@ -43,7 +48,8 @@ class Bank(User):
         else:
             self.balance = self.balance - self.amount
             return 'Account balance is now £' + str(self.balance)
-
+        
+    # defining the view balance method
     def viewBalance(self):
         return str(self.balance)
 
