@@ -1,46 +1,51 @@
-<!DOCTYPE html>
+{% if 'user' in session %}
 <head>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" />
     <script src="https://kit.fontawesome.com/5daa8eb347.js" crossorigin="anonymous"></script>
     <title>Dashboard</title>
 </head>
 
+
+
 <body>
+    <div id="mainpages">
     <div id="sidebar">
         <a href="/"><span>WeBank</span></a>
-        <a href="dashboard"><i class="fa-solid fa-house fa-fw"></i><span>Account Details</span></a>
+        <a href="/"><i class="fa-solid fa-house fa-fw"></i><span>Account Details</span></a>
         <a href="deposit"><i class="fa-solid fa-wallet fa-fw"></i><span>Deposit</span></a>
         <a href="withdraw"><i class="fa-solid fa-money-bill fa-fw"></i><span>Withdraw</span></a>
         <a href="transfer"><i class="fa-solid fa-money-bill-transfer fa-fw"></i><span>Transfer</span></a>
     </div>
-    <form method="post">
-        <div id="content">
-            <div>
-                <h2 id ="mainformtext">User Profile</h2>
-                <h4>View account details</h4>
-            </div>
-            <div class="form-group">
-                <label for="firstname">First Name</label><br>
-                <span><input type="text" name="firstname" value="{{session['user']}}" readonly></span>
-            </div>
-            <div class="form-group">
-                <label for="lastname">Last Name</label><br>
-                <span><input type="text" name="lastname"></span>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label><br>
-                <span><input type="text" name="email"></span>
-            </div>
-            <div class="form-group">
-                <label for="accountnumber">Account Number</label><br>
-                <span><input type="number" name="accountnumber"></span>
-            </div>
-            <div class="form-group">
-                <label for="accountbalance">Account Balance</label><br>
-                <span><input type="number" placeholder = "0" name="accountbalance" value="{{money}}" readonly></span>
-            </div>
-        </div>
-    </form>
-</body>
 
-</html>
+    <form method="post">
+        <div>
+            <h2 id="mainformtext">User Profile</h2>
+            <h4>View Account Details</h4>
+        </div>
+    
+        <div class="form-group">
+            <label for="firstname">First Name</label><br>
+            <span><input type="text" name="firstname" value="{{ firstname }}" readonly></span>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label><br>
+            <span><input type="text" name="lastname" value="{{ lastname }}" readonly></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address</label><br>
+            <span><input type="text" name="email" value="{{session['user']}}" readonly></span>
+        </div>
+        <div class="form-group">
+            <label for="accountnumber">Account Number</label><br>
+            <span><input type="text" name="accountnumber" readonly ></span>
+        </div>
+        <div class="form-group">
+            <label for="accountbalance">Account Balance</label><br>
+            <span><input type="text" placeholder = "0" name="accountbalance" value="{{money}}" readonly></span>
+        </div>
+    </div>
+    </form>
+    </div>
+ 
+{% endif %}
+
